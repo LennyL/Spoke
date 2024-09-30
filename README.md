@@ -2,6 +2,21 @@
 
 <p align="center"><img width="480" alt="Spoke" src="https://user-images.githubusercontent.com/21111451/66261819-ffd9ff00-e799-11e9-88bf-981d238b4f20.gif"></p>
 
+58agents:
+
+The relevant docker file for building a new image: /RetPageOriginDockerfile , it gave a build error on the arm64 mac, so I ran it on an Ubuntu laptop
+
+The relevant files to change the URL-s for the Architecture and Rock kit:
+
+src/ui/assets/sources/ArchitectureKitSource.js
+src/ui/assets/sources/RockKitSource.js
+
+In case of changing these, don't forget to change the Content Security Policies (CSP) in the "58agents-hubs" repository:
+
+/client-service-hubs/components/hubs-ce/mozilla-hubs-ce-chart/charts/spoke/templates/deployment.yaml  config: turkeyCfg_non_cors_proxy_domains
+
+/.clients/config.test-58a.json and other the other customer environments  configs: "RET_CSP_CONNECT_SRC" and "RET_CSP_IMG_SRC"
+
   **Easily create custom 3D environments for Hubs.**
 
 **[Spoke Documentation](https://github.com/Hubs-Foundation/hubs-docs/blob/master/docs/spoke-creating-projects.md)**
