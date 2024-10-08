@@ -9,6 +9,7 @@ The relevant docker file for building a new image: /RetPageOriginDockerfile , it
 The relevant files to change the URL-s for the Architecture and Rock kit:
 
 src/ui/assets/sources/ArchitectureKitSource.js
+
 src/ui/assets/sources/RockKitSource.js
 
 In case of changing these, don't forget to change the Content Security Policies (CSP) in the "58agents-hubs" repository:
